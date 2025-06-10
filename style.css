@@ -61,29 +61,47 @@ footer {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Floating hearts animation */
-
+/* Floating hearts styles */
 .heart {
   position: fixed;
   bottom: -50px;
   width: 30px;
   height: 30px;
-  background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center/contain;
-  animation-name: floatUp;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  background-color: #ff69b4;
+  clip-path: polygon(
+    50% 0%,
+    61% 7%,
+    68% 15%,
+    75% 27%,
+    75% 45%,
+    75% 60%,
+    68% 75%,
+    55% 85%,
+    40% 93%,
+    25% 85%,
+    12% 75%,
+    0% 60%,
+    0% 45%,
+    0% 27%,
+    7% 15%,
+    14% 7%
+  );
+  background: radial-gradient(circle at 50% 35%, #ff6eb4 0%, #c71585 100%);
   opacity: 0.8;
+  animation-name: floatUp;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
   pointer-events: none;
   z-index: 9999;
 }
 
 @keyframes floatUp {
   0% {
-    transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1) rotate(0deg);
     opacity: 0.8;
   }
   100% {
-    transform: translateY(-100vh) scale(1.5);
+    transform: translateY(-150vh) scale(1.5) rotate(360deg);
     opacity: 0;
   }
 }
