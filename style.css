@@ -4,7 +4,6 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* prevent horizontal scroll due to hearts */
 }
 
 header {
@@ -68,26 +67,25 @@ footer {
   bottom: -50px;
   width: 30px;
   height: 30px;
-  background-color: #ff69b4;
+  background: radial-gradient(circle at 50% 35%, #ff6eb4 0%, #c71585 100%);
   clip-path: polygon(
-    50% 0%,
-    61% 7%,
-    68% 15%,
-    75% 27%,
-    75% 45%,
-    75% 60%,
-    68% 75%,
-    55% 85%,
-    40% 93%,
-    25% 85%,
-    12% 75%,
-    0% 60%,
-    0% 45%,
-    0% 27%,
-    7% 15%,
+    50% 15%, 
+    61% 7%, 
+    68% 15%, 
+    75% 27%, 
+    75% 45%, 
+    75% 60%, 
+    68% 75%, 
+    55% 85%, 
+    40% 93%, 
+    25% 85%, 
+    12% 75%, 
+    0% 60%, 
+    0% 45%, 
+    0% 27%, 
+    7% 15%, 
     14% 7%
   );
-  background: radial-gradient(circle at 50% 35%, #ff6eb4 0%, #c71585 100%);
   opacity: 0.8;
   animation-name: floatUp;
   animation-timing-function: ease-in-out;
