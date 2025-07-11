@@ -40,7 +40,7 @@ footer {
   margin-top: 2rem;
 }
 
-/* Updated layout and image size */
+/* Layout & responsive image styles */
 .date-entry {
   display: flex;
   align-items: flex-start;
@@ -59,6 +59,12 @@ footer {
   border-radius: 10px;
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.date-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
 /* Floating hearts styles */
