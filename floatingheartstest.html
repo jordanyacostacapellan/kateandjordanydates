@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Floating Hearts Test</title>
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #fffafc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 9999;
+  }
+
+  .heart {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center center;
+    background-size: contain;
+    animation: floatUp linear forwards;
+    opacity: 0.9;
+    filter: drop-shadow(0 0 2px #ff69b4);
+  }
+
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0.9;
+    }
+    100% {
+      transform: translateY(-120vh) scale(1.5);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>Test Floating Hearts</h1>
+
+<div class="floating-hearts"></div>
+
+<script>
+  const heartsContainer = document.querySelector('.floating-hearts');
+
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = 3 + Math.random() * 2 + 's';
+    heartsContainer.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }
+
+  setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
